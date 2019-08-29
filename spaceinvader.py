@@ -2,12 +2,13 @@ import pygame
 import sys
 from settings import *
 
+pygame.init()
+
 class Space_Invaders(object):
     def __init__(self):
         self.main_screen = main_screen
         self.caption = pygame.display.set_caption('Space Invaders')
         self.clock = pygame.time.Clock()
-        self.caption = pygame.display.set_caption('SpaceInvaders')
         self.running = True
         self.state = 'intro'
 
