@@ -4,7 +4,7 @@ from settings import *
 
 pygame.init()
 
-class Space_Invaders(object):
+class Space_Invaders:
     def __init__(self):
         self.main_screen = main_screen
         self.caption = pygame.display.set_caption('Space Invaders')
@@ -22,6 +22,19 @@ class Space_Invaders(object):
             self.clock.tick(FPS)
         pygame.quit()
         sys.exit()
+        
+    def intro_events(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.running = False
+            if event.type == pygame.KEYDOWN:
+                self.state = 'playing'
+    
+    def intro_updates(self):
+        pass
+    
+    def intro_draw(self):
+        self.main_screen.fill(black)
 
    
 
