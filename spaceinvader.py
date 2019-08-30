@@ -36,6 +36,17 @@ class Space_Invaders:
     def load(self):
         self.background = pygame.image.load('./Images/background.jpg')
         self.background = pygame.transform.scale(self.background, (width, height))
+        self.enemy1 = pygame.image.load('./Images/invader3_1.png')
+        self.enemy1 = pygame.transform.scale(self.enemy1, (width//25, height//20))
+
+        self.enemy2 = pygame.image.load('./Images/invader2_2.png')
+        self.enemy2 = pygame.transform.scale(self.enemy2, (width//25, height//20))
+
+        self.enemy3 = pygame.image.load('./Images/invader1_2.png')
+        self.enemy3 = pygame.transform.scale(self.enemy3, (width//25, height//20))
+
+        self.enemy4 = pygame.image.load('./Images/invader4.png')
+        self.enemy4 = pygame.transform.scale(self.enemy4, (width//14, height//19))
         
     def intro_events(self):
         for event in pygame.event.get():
@@ -49,6 +60,11 @@ class Space_Invaders:
     
     def intro_draw(self):
         self.main_screen.blit(self.background, (0, 0))
+        self.main_screen.blit(self.enemy1, (width//2.4, height//2.1))
+        self.main_screen.blit(self.enemy2, (width//2.4, height//1.825))
+        self.main_screen.blit(self.enemy3, (width//2.4, height//1.6))
+        self.main_screen.blit(self.enemy4, (width//2.489, height//1.435))
+        
         self.main_text(
                 'SPACE INVADERS',
                 self.main_screen,
@@ -65,7 +81,17 @@ class Space_Invaders:
                 (white),
                 pygame.font.Font(font_path, 20),
                 center=True
-        )
+            )
+        
+        self.main_text(
+                'PRESS ANY KEY TO CONTINUE',
+                self.main_screen,
+                [width//2, height//2.3],
+                (white),
+                pygame.font.Font(font_path, 20),
+                center=True
+            )
+        
         
         pygame.display.update()
 
