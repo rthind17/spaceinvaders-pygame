@@ -49,6 +49,23 @@ class Space_Invaders:
     
     def intro_draw(self):
         self.main_screen.blit(self.background, (0, 0))
+        self.main_text(
+                'SPACE INVADERS',
+                self.main_screen,
+                [width//2, height//3],
+                (white), 
+                pygame.font.Font(font_path, font_size),
+                center=True
+            )
+
+        self.main_text(
+                'HIGH SCORE',
+                self.main_screen,
+                [75, 20],
+                (white),
+                pygame.font.Font(font_path, 20),
+                center=True
+        )
         
         pygame.display.update()
 
