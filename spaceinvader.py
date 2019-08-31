@@ -54,6 +54,9 @@ class Space_Invaders:
         self.enemy4 = pygame.image.load('./Images/invader4.png')
         self.enemy4 = pygame.transform.scale(self.enemy4, (width//14, height//19))
         
+        self.main_audio = pygame.mixer.music.load(sound_path)
+        pygame.mixer.music.play(-1)
+        
     def intro_events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -140,6 +143,8 @@ class Space_Invaders:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
+        pygame.mixer.music.stop()
+
 
     def playing_updates(self):
         pass
