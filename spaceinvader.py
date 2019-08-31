@@ -19,6 +19,12 @@ class Space_Invaders:
                 self.intro_events()
                 self.intro_updates()
                 self.intro_draw()
+            elif self.state == 'playing':
+                self.playing_events()
+                self.playing_updates()
+                self.playing_draw()
+            else:
+                self.running = False
                 
             self.clock.tick(FPS)
         pygame.quit()
@@ -130,7 +136,35 @@ class Space_Invaders:
         
         pygame.display.update()
         
-        
+    def playing_events(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.running = False
+
+    def playing_updates(self):
+        pass
+
+    def playing_draw(self):
+        self.main_screen.blit(self.background, (0, 0))
+        self.main_text(
+                'SCORE',
+                self.main_screen,
+                [45, 20],
+                (white),
+                pygame.font.Font(font_path, 20),
+                center=True
+            )
+
+        self.main_text(
+                'LIVES',
+                self.main_screen,
+                [625, 20],
+                (white),
+                pygame.font.Font(font_path, 20),
+                center=True,
+            )
+
+ 
         pygame.display.update()
 
 
