@@ -92,6 +92,44 @@ class Space_Invaders:
                 center=True
             )
         
+        self.main_text(
+                '=     10 PTS',
+                self.main_screen,
+                [width//1.83, height//1.97],
+                (bright_green),
+                pygame.font.Font(font_path, 20),
+                center=True
+            )
+
+        self.main_text(
+                '=     20 PTS',
+                self.main_screen,
+                [width//1.83, height//1.73],
+                (blue),
+                pygame.font.Font(font_path, 20),
+                center=True
+            )
+
+        self.main_text(
+                '=     30 PTS',
+                self.main_screen,
+                [width//1.83, height//1.53],
+                (purple),
+                pygame.font.Font(font_path, 20),
+                center=True
+            )
+
+        self.main_text(
+                '=     ?????',
+                self.main_screen,
+                [width//1.81, height//1.37],
+                (red),
+                pygame.font.Font(font_path, 20),
+                center=True
+            )
+        
+        pygame.display.update()
+        
         
         pygame.display.update()
 
