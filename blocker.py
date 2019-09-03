@@ -3,8 +3,8 @@ from settings import *
 from spaceinvader import *
 
 class Blocker(pygame.sprite.Sprite):
-    def __init__(self, game, size, color, row, column):
-        self.game = game
+    def __init__(self, size, color, row, column):
+        pygame.sprite.Sprite.__init__(self)
         self.height = size
         self.width = size
         self.color = color
